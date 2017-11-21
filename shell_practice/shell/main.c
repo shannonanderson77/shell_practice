@@ -10,7 +10,7 @@
 int main(int argc, char **argv)
 {
 
-	shell_loop();
+	shell_loop(argc, argv);
 
 	return (0);
 }

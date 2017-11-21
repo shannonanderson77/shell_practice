@@ -8,6 +8,7 @@ char **shell_split(char *line)
 	char *token;
 	int position = 0;
 
+	token = NULL;
 	tokens = malloc(sizeof(char *) * BUFSIZE);
 
 	if (tokens == NULL)
@@ -19,10 +20,10 @@ char **shell_split(char *line)
 	token = strtok(line, DELIM);
 	while (token != NULL)
 	{
-		token[position] = token;
+		tokens[position] = token;
 		token = strtok(NULL, DELIM);
 		position++;
 	}
-	token[position] = NULL;
+	tokens[position] = NULL;
 	return (tokens);
 }
