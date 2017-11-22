@@ -1,4 +1,6 @@
 #include "shell.h"
+#include <stdio.h>
+#include <string.h>
 
 
 char *search_path(void)
@@ -10,7 +12,7 @@ char *search_path(void)
 
 	for (i = 0; environ[i] != '\0'; i++)
 	{
-		if (_strncmp("PATH=", environ[i], 5) == 0)
+		if (strncmp("PATH=", environ[i], 5) == 0)
 		{
 			path = _strcpy(temp, environ[i]);
 			path += 5;
