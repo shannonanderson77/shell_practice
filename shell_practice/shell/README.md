@@ -1,6 +1,7 @@
-#Simple Shell - Command Line Interface
+# Simple Shell - Command Line Interface
 
 ## Shannon Anderson-Cockern and James Choi
+   Special thanks to: Henry Hsu and Dave Yoon
 
 ## Description
 ``Simple Shell`` is a imitation of the command line interface in C. Reads input,
