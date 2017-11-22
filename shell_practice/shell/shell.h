@@ -22,8 +22,8 @@ int _strcmp(char *s1, char *s2);
 
 typedef struct builtin
 {
-	char *name;
-	int (*fu);
-} built_t;
+	char *command;
+	int (*function)(char **);
+} built;
 
 #endif

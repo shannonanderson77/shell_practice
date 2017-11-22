@@ -1,28 +1,21 @@
 #include "shell.h"
 
-int shell_launch(char **args)
+void search_path(void)
 {
-	int status;
-	pid_t pid;
-	
-	pid = fork();
-	if (pid < 0)
+	char *path;
+	char *temp[];
+
+	int i;
+
+	for (i = 0; environ[i] != '\0'; i++)
 	{
-		printf("Error");
-	}
-	if (pid == 0)
-	{
-		if (execve(args[0], args, NULL) == -1)
+		if (_strncmp("PATH=", environ[i], 5) == 0)
 		{
-			printf("error");
+			path = _strcpy(temp, environ[i]);
+			path += 5;
+			return (path);
 		}
-		return (-1);
-
-
+		else
+			return (1);
 	}
-	else
-	{
-		wait(&status);
-	}
-	return (0);
 }
