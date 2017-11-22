@@ -2,43 +2,37 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/wait.h>
+#include "holberton.h"
 
 /**
- * main - a program that executes the command ls -l /tmp in 5
- * different child processes
+ * fork_wait_execve - a program that forks a new process, waits the shell
+ * and executes new program in forked process
  *
- * Return: void
+ * Return: an integer status
  */
-int main(void)
+int fork_wait_execve(char *argv[])
 {
-pid_t mom_pid;
-int i;
-pid_t *child_pid;
+pid_t parent_pid;
+pid_t wait_pid;
 int status;
-char *argv[] = {"/bin/ls", "-l", "/tmp", NULL};
 
-if (execve(argv[0], argv, NULL) == -1)
+parent_pid = fork();
+if (parent_pid == 0)
 {
-	perror("Error:");
-}
-for (i = 0; i < 5; i++)
-{
-	child_pid[i] = fork();
-	mom_pid = getpid();
-	printf("After fork\n");
-	printf("child_pid%d is %u\n", i, child_pid[i]);
-	if (child_pid[i] == -1)
+	if (execve(argv[0], argv, NULL) == -1)
 	{
-		perror("Error:");
-		return (1);
+		perror("fork_wait_execve");
+		return (-1);
 	}
-	if (child_pid[i] == 0)
+	else if (parent_pid == -1)
 	{
-		printf("I'm waiting a bit\n");
+		perror("fork_wait_execve");
+		return (-1);
+	}
+	else
+	{
 		sleep(3);
-	} else
-	{
-		wait(&status);
+		wait_pid = wait(&status);
 	}
-} return (0);
+} return (status);
 }
