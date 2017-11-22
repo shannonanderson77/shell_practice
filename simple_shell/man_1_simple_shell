@@ -1,0 +1,26 @@
+.\" Manpage for simple shell
+.\" A simple c shell created for Holberton School
+.\" batch 4 project code a simple shell
+.TH SIMPLE_SHELL 1 "23 November 2017" "0.10" "Holberton School Simple Shell Project"
+.SH NAME
+simple shell - Holberton batch 4 project coding a simple shell in C.
+.SH SYNOPSIS
+A simple C programming language shell.
+.I FORMAT
+.I [ARGUMENT]
+.SH DESCRIPTION
+A C programming language shell that prints a prompt, forks a child process, and executes command user enters at prompt.
+.PP
+
+.SH AUTHOR
+Written by James Choi and Shannon Anderson-Cockern.
+.SH REPORTING BUGS
+No known bugs.
+.PP
+Report simple shell translation bugs to <@holbertonschool.com> or <266@holbertonschool.com>.
+.SH COPYRIGHT
+.PP
+Copyright 2017 Holberton School.
+.PP
+This  is  free  software: you are free to change and redistribute it.  There is NO WARRANTY, to the extent permitted by law.
+
