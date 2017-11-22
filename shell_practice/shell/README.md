@@ -1,4 +1,4 @@
-# Simple Shell - Command Line Interface
+ Simple Shell - Command Line Interface
 
 ## Shannon Anderson-Cockern and James Choi
    Special thanks to: Henry Hsu and Dave Yoon
