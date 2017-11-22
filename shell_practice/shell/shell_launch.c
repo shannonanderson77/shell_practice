@@ -1,5 +1,6 @@
 #include "shell.h"
 
+
 char *search_path(void)
 {
 	char *path;
