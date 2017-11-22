@@ -4,9 +4,10 @@
 
 extern char** environ;
 
-int shell_env(void)
+int shell_env(char **ar)
 {
 	int i;
+	(void)ar;
 
 	while (environ[i] != '\0')
 	{

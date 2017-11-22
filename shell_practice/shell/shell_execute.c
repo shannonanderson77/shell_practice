@@ -2,11 +2,13 @@
 
 int shell_execute(char **args, char **dirs, char *line)
 {
+	int status = 1;
 	pid_t pid;
 	char *command = NULL;
 	DIR *p_dir;
 	struct dirent *p_file;
 	int i;
+	(void)line;
 
 	pid = fork();
 	if (pid < 0)

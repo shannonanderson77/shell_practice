@@ -8,7 +8,12 @@ void shell_loop(int argc, char *argv[])
 	int i = 0;
 	char **dirs;
 	char *path = NULL;
-	char temp[];
+	bt btn[] = {
+		{"env", shell_env},
+		{"exit", shell_exit},
+		{NULL, NULL}
+	};
+
 
 	(void)argc;
 	(void)argv;
@@ -17,20 +22,16 @@ void shell_loop(int argc, char *argv[])
 		line = shell_getline();
 		args = shell_split(line);
 
-		built btn[] = {
-			{"env", shell_env},
-			{"exit", shell_exit},
-			{NULL, NULL}
-		};
 
 		while (btn[i].command != NULL)
 		{
 			if (_strcmp(args[0], btn[i].command) == 0)
-				return (btn[i].function(args));
+				(btn[i].function(args));
 			i++;
 		}
 
-		search_path();
+		path = search_path();
+		dirs = path_token(path);
 		shell_execute(args, dirs, line);
 		free(line);
 		free(args);

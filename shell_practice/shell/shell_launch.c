@@ -1,9 +1,9 @@
 #include "shell.h"
 
-void search_path(void)
+char *search_path(void)
 {
 	char *path;
-	char *temp[];
+	char temp[100];
 
 	int i;
 
@@ -16,6 +16,7 @@ void search_path(void)
 			return (path);
 		}
 		else
-			return (1);
+			return (NULL);
 	}
+	return (NULL);
 }
